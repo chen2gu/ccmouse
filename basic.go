@@ -39,7 +39,7 @@ func varibleTypeDedution2() {
 }
 
 func varibleTypeDedution3() {
-	b, c, s1, t1 := 11, 224, "sixsixsxi", true
+	b, c, s1, t1 := 11, 224, true, "sixsixsxi"
 	b = 909
 	fmt.Println(b, c, s1, t1)
 }
