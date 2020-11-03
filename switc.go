@@ -29,8 +29,8 @@ func main() {
 		grade(80),
 		grade(30),
 		grade(100),
-		grade(101),
-		grade(-101),
+		//grade(101),
+		//grade(-101),
 	)
 
 }
