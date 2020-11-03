@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+var (
+	a = 01
+	s = "hello"
+)
+
 func variableZeroValue() {
 	var a int
 	var s string
@@ -53,6 +58,8 @@ func main() {
 	varibleTypeDedution2()
 
 	varibleTypeDedution3()
+
+	fmt.Println(a, s)
 
 	//	// step1: cd 到项目下
 	//
