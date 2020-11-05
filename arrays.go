@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+func printArray(arr []int) {
+	arr[0] = 100
+	for k, v := range arr {
+		fmt.Println(k, v)
+	}
+
+}
+
 func main() {
 	//fmt.Println("Hello,World!")
 	var arr1 [5]int
@@ -21,21 +29,28 @@ func main() {
 		fmt.Println(arr3[i])
 	}
 
-
 	fmt.Println("------->")
 	for i := range arr3 {
 		fmt.Println(arr3[i])
 	}
 
 	fmt.Println("------->")
-	for _,k := range arr3 {
+	for _, k := range arr3 {
 		fmt.Println(k)
 	}
 
 	fmt.Println("------->")
-	for i,k := range arr3 {
-		fmt.Println(i,k)
+	for i, k := range arr3 {
+		fmt.Println(i, k)
 	}
 
+	fmt.Println("------->")
+	printArray(arr1[:])
+	//printArray(arr2)
+	fmt.Println("------->")
+	printArray(arr3[:])
+
+	fmt.Println("------->")
+	fmt.Println(arr1, arr3)
 
 }
