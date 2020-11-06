@@ -54,8 +54,8 @@ func sum(number ...int) int {
 	return s
 }
 
-func swap(a,b int) (int,int) {
-	return b,a
+func swap(a, b int) (int, int) {
+	return b, a
 }
 
 func main() {
@@ -80,10 +80,9 @@ func main() {
 	fmt.Println("------->")
 	fmt.Println(sum(1, 2, 3, 4))
 
-
 	fmt.Println("------->")
-      a,b := 3,5
-     a,b =  swap(a,b)
-      fmt.Println(a,b)
+	a, b := 3, 5
+	a, b = swap(a, b)
+	fmt.Println(a, b)
 
 }
