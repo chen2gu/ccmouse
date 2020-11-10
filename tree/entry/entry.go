@@ -5,6 +5,23 @@ import (
 	"github.com/chen2gu/ccmouse/tree"
 )
 
+type myTreeNode struct {
+	node *tree.Node
+}
+
+func (myNode *myTreeNode) postOrder() {
+	if myNode == nil || myNode.node == nil {
+		return
+	}
+	left := myTreeNode{myNode.node.Left}
+	right := myTreeNode{myNode.node.Right}
+	left.postOrder()
+
+	right.postOrder()
+	myNode.node.Print()
+
+}
+
 func main() {
 	var root tree.Node
 	root = tree.Node{Value: 3}
@@ -12,15 +29,15 @@ func main() {
 	root.Right = &tree.Node{5, nil, nil}
 	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CeateNode(2)
-
-	root.Print()
 	root.Right.Left.SetValue(4)
-	fmt.Println()
-	root.Right.Left.Print()
-	fmt.Println()
 
 	root.Traverse()
+	fmt.Println()
+	myRoot := myTreeNode{&root}
+	myRoot.postOrder()
+	fmt.Println()
 
+	fmt.Println("------")
 	root.Print()
 	root.SetValue(100)
 
