@@ -1,10 +1,12 @@
 package tree
 
+import "fmt"
+
 func (node *Node) Traverse() {
 	node.TraverseFunc(func(n *Node) {
 		n.Print()
 	})
-	fmt.println()
+	fmt.Println()
 
 }
 
