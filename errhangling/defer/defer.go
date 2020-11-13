@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"github.com/chen2gu/ccmouse/functional/fib"
 	"os"
@@ -24,10 +25,23 @@ func tyeDefer1() {
 	}
 }
 
-func writerFile(filename string) {
-	file, err:=os.Create(filename)
+func wr1iterFile(filename string) {
+	file, err:=os.OpenFile(filename,os.O_EXCL|os.O_CREATE,0644)
+
+	err = errors.New("This is a custom error.")
+
 	if err != nil {
-		panic(err)
+		//panic(err)
+		//fmt.Println("Error: ",err.Error())
+
+		if PathError ,ok := err.(*os.PathError); !ok {
+			panic(err)
+		}else {
+			fmt.Printf("%s %s %sy.\n",PathError.Op,
+				PathError.Path,
+				PathError.Err)
+		}
+		return
 	}
 
 	defer file.Close()
@@ -43,6 +57,6 @@ func writerFile(filename string) {
 
 func main() {
 	//tyeDefer()
-	//writerFile("fib.txt")
-	tyeDefer1()
+	wr1iterFile("fib.txt")
+	//tyeDefer1()
 }
