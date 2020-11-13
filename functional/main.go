@@ -3,19 +3,16 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/chen2gu/ccmouse/functional/fib"
 	"io"
 	"strings"
+
+
 )
 
-type intGen func() int
 
-func fibonacci() intGen {
-	a, b := 0, 1
-	return func() int {
-		a, b = b, a+b
-		return a
-	}
-}
+
+type intGen func() int
 
 func (g intGen) Read(p []byte) (n int, err error) {
 	next := g()
@@ -36,7 +33,7 @@ func printFileContents(reader io.Reader) {
 }
 
 func main() {
-	f := fibonacci()
+	f := fib.Fibonacci()
 	fmt.Println(f())
 	fmt.Println(f())
 	fmt.Println(f())
@@ -47,5 +44,5 @@ func main() {
 	fmt.Println(f())
 	fmt.Println(f())
 
-	printFileContents(f)
+	//printFileContents(f)
 }
