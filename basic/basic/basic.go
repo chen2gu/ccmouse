@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 var (
 	a = 01
@@ -36,6 +39,19 @@ func varibleTypeDedution2() {
 	s1 := "abc" +
 		"hahhaha"
 	fmt.Println(b, c, s1)
+}
+
+func triangle() {
+	var a, b int = 3, 4
+
+	fmt.Println(calcTriangle(a, b))
+}
+
+func calcTriangle(a, b int) int {
+	var c int
+	c = int(math.Sqrt(float64(a*a + b*b)))
+	return c
+
 }
 
 func varibleTypeDedution3() {
