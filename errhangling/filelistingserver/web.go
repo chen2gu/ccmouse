@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/chen2gu/ccmouse/errhangling/filelistingserver/filelisting"
+	"github.com/chen2guo/ccmouse/errhangling/filelistingserver/filelisting"
 	"log"
 	"net/http"
 	_ "net/http/pprof"
@@ -30,15 +30,18 @@ func errWapper(handler appHandler) func(http.ResponseWriter, *http.Request) {
 
 		if err != nil {
 			log.Printf("Error occurred handling request: %s.", err.Error())
+
 			if userErr, ok := err.(userError); ok {
 				http.Error(writer, userErr.Message(), http.StatusBadRequest)
 				return
 			}
-			code := http.StatusOK
 
+			code := http.StatusOK
 			switch {
 			case os.IsNotExist(err):
 				code = http.StatusNotFound
+			case os.IsPermission(err):
+				code = http.StatusForbidden
 			default:
 				code = http.StatusInternalServerError
 			}
