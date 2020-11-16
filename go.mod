@@ -1,4 +1,4 @@
-module github.com/chen2gu/ccmouse
+module github.com/chen2guo/ccmouse
 
 go 1.13
 
