@@ -6,11 +6,7 @@ import (
 	"github.com/chen2gu/ccmouse/functional/fib"
 	"io"
 	"strings"
-
-
 )
-
-
 
 type intGen func() int
 

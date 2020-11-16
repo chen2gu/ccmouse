@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func tyeDefer()  {
+func tyeDefer() {
 	defer fmt.Println(1)
 	defer fmt.Println(2)
 	fmt.Println(3)
@@ -17,16 +17,16 @@ func tyeDefer()  {
 }
 
 func tyeDefer1() {
-	for i := 0;i<100; i++ {
+	for i := 0; i < 100; i++ {
 		defer fmt.Println(i)
-		if i==30 {
+		if i == 30 {
 			panic("error.")
 		}
 	}
 }
 
 func wr1iterFile(filename string) {
-	file, err:=os.OpenFile(filename,os.O_EXCL|os.O_CREATE,0644)
+	file, err := os.OpenFile(filename, os.O_EXCL|os.O_CREATE, 0644)
 
 	err = errors.New("This is a custom error.")
 
@@ -34,10 +34,10 @@ func wr1iterFile(filename string) {
 		//panic(err)
 		//fmt.Println("Error: ",err.Error())
 
-		if PathError ,ok := err.(*os.PathError); !ok {
+		if PathError, ok := err.(*os.PathError); !ok {
 			panic(err)
-		}else {
-			fmt.Printf("%s %s %sy.\n",PathError.Op,
+		} else {
+			fmt.Printf("%s %s %sy.\n", PathError.Op,
 				PathError.Path,
 				PathError.Err)
 		}
@@ -50,8 +50,8 @@ func wr1iterFile(filename string) {
 	defer writer.Flush()
 
 	f := fib.Fibonacci()
-	for i :=0; i<20;i++{
-		fmt.Fprintln(writer,f())
+	for i := 0; i < 20; i++ {
+		fmt.Fprintln(writer, f())
 	}
 }
 
