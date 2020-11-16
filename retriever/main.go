@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/chen2gu/ccmouse/retriever/mock"
-	"github.com/chen2gu/ccmouse/retriever/real"
+	"github.com/chen2guo/ccmouse/retriever/mock"
+	"github.com/chen2guo/ccmouse/retriever/real"
 	"time"
 )
 

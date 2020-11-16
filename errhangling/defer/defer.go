@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"github.com/chen2gu/ccmouse/functional/fib"
+	"github.com/chen2guo/ccmouse/functional/fib"
 	"os"
 )
 

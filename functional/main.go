@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/chen2gu/ccmouse/functional/fib"
+	"github.com/chen2guo/ccmouse/functional/fib"
 	"io"
 	"strings"
 )

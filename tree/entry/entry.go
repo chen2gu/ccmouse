@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/chen2gu/ccmouse/tree"
+	"github.com/chen2guo/ccmouse/tree"
 )
 
 type myTreeNode struct {

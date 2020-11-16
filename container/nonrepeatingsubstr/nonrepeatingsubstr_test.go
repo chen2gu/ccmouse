@@ -31,6 +31,9 @@ func TestSubstr(t *testing.T) {
 // go test -bench .
 func BenchmarkSubstr(b *testing.B) {
 	s := "Yes我爱我的家乡!"
+	for i := 0; i < 13; i++ {
+		s = s + s
+	}
 	ans := 6
 
 	for i := 0; i < b.N; i++ {
