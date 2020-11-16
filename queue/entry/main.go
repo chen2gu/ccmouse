@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/chen2gu/ccmouse/queue"
+	"github.com/chen2guo/ccmouse/queue"
 )
 
 func main() {
