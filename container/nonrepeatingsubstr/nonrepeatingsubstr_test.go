@@ -2,6 +2,9 @@ package main
 
 import "testing"
 
+// go test -coverprofile=c.out
+// go tool cover -html=c.out
+
 func TestSubstr(t *testing.T) {
 	tests := []struct {
 		s   string
@@ -23,4 +26,17 @@ func TestSubstr(t *testing.T) {
 		}
 	}
 
+}
+
+// go test -bench .
+func BenchmarkSubstr(b *testing.B) {
+	s := "Yes我爱我的家乡!"
+	ans := 6
+
+	for i := 0; i < b.N; i++ {
+		actual := length0fNonRepeatingSubStr(s)
+		if actual != ans {
+			b.Errorf("calcTriangle %d ; got %s; expected %d.", actual, s, ans)
+		}
+	}
 }
