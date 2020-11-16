@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-var last0ccurred = make([]int, 0xffff)
+//var last0ccurred = make([]int, 0xffff)
 
 func length0fNonRepeatingSubStr(s string) int {
 	//
-	//last0ccurred := make(map[rune]int)
+	last0ccurred := make(map[rune]int)
 	for i := range last0ccurred {
 		last0ccurred[i] = 0
 	}
