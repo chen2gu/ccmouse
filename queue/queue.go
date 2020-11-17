@@ -1,5 +1,6 @@
 package queue
 
+// An FIFO queue.
 type Queue []int
 
 func (q *Queue) Push(v int) {
